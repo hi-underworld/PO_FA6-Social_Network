@@ -61,11 +61,11 @@ SCWEET_PASSWORD=your password
 
 
 
-SubT1:extract the Username from the Profile Page
+###SubT1:extract the Username from the Profile Page
 
 Go to the target's profile page to get the Username like "@Jerry" not "Jerry", with the file "List name of ...."
 
 
 
-SubT2:get the User's tweets
+###SubT2:get the User's tweets
 
