@@ -1,4 +1,4 @@
-# PO_FA6-Social_Newwork
+# PO_FA6-Social_Network
 
 ## There are 6 subtasks as following:
 
