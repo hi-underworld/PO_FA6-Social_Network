@@ -43,7 +43,7 @@ With the code as an example, you could collect followers and followings.(Two fun
 
 ```python
 from Scweet.user import get_user_information, get_users_following, get_users_followers
-
+users = ['@username']
 env_path = ".env"
 
 following = get_users_following(users=users, env=env_path, verbose=0, headless=False, wait=2, limit=50, file_path=None)
