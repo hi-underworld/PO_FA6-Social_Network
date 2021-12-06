@@ -68,3 +68,4 @@ Go to the target's profile page to get the Username like "@Jerry" not "Jerry", w
 
 ### SubT2:get the User's tweets
 
+### SubT3:get the followings(&followers)
