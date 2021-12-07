@@ -4,7 +4,7 @@
 
 1、extract the Username from the Profile Page
 
-2、get the UserA's tweets
+2、get the tweets
 
 3、get the list of follwers and followings of UserA
 
@@ -66,6 +66,55 @@ SCWEET_PASSWORD=your password
 Go to the target's profile page to get the Username like "@Jerry" not "Jerry", with the file "List name of ...."
 
 
-### SubT2:get the User's tweets
+### SubT2:get the tweets
+Before the starting the subtask, we have to know how to set three parameters 'from account','to account'and 'mention account' in the func:scrape() 
 
+#### Cond1:if you want to get tweets by User1 to User2, set from_account = User1, to_account = User2.  
+
+Here are an example:
+
+<img width="297" alt="截屏2021-12-07 下午7 26 19" src="https://user-images.githubusercontent.com/63695492/145022637-cb0735b5-5db7-4f25-8bc5-1fe6f49771eb.png">
+In this example, with the code as following:
+
+```python
+data = scrape(since="2021-12-05", until="2021-12-06", from_account = 'Bugeater12',to_account='SenatorFischer', interval=1,headless = False,display_type="Top", save_images=False, lang="en",resume=False, filter_replies=False, proximity=False)
+```
+
+you could get this:
+<img width="956" alt="截屏2021-12-07 下午7 27 45" src="https://user-images.githubusercontent.com/63695492/145022250-4c00f485-d2f7-4f42-b41e-0c7822bc3c5f.png">
+
+#### Cond2:if you want to get tweets by User1, where User2 are mentioned, set from_account = User1, mention_account = User2
+
+Here are an example:
+
+<img width="437" alt="截屏2021-12-07 下午7 42 24" src="https://user-images.githubusercontent.com/63695492/145023252-8149ac62-ee04-4094-bdd6-e215dcf4bd08.png">
+In this example, with the code as following:
+
+```python
+data = scrape(since="2021-12-04", until="2021-12-05", from_account = 'SenatorFischer',to_account='growneb', interval=1,headless = False,display_type="Top", save_images=False, lang="en",resume=False, filter_replies=False, proximity=False)
+```
+
+you could get this tweet finally.
+
+#### Cond3:if you want to get tweets by someone you don't care, where User1 & User2 are mentioned together.However, setting mention_account(not accounts) = User1,User2 is not practical, but we could set the parameter words = [User1, User2].
+
+Here are an example(here, the senator is the one that we don't care):
+
+<img width="438" alt="截屏2021-12-07 下午7 59 22" src="https://user-images.githubusercontent.com/63695492/145025334-fa0b9643-fb3d-4948-a740-94653f7824cd.png">
+
+```python
+data = scrape(since="2021-11-17", until="2021-11-18", from_account = 'SenatorFischer',words =['ASA_Soybeans','UsChamber'], interval=1,headless = False,display_type="Top", save_images=False, lang="en",resume=False, filter_replies=False, proximity=False)
+```
+
+you could get this tweet finally.
+
+Now, we discuss how to get the tweets where User1 and User2 appear together. Maybe, we can also divide it in 3 conditions: 
+
+(1)User1 tweets, and User2 is mentioned in User1's tweet; 
+
+(2)User1 tweets, and User2 reply to User1's tweet as a comment;
+
+(3)Someone tweets, and User1 & User2 are mentioned is the tweet.
+
+In our project, we get the list of Sens & Reps. Then traverse all Sens & Reps as User1 and User2 in above 3 conditions, recycling 544 * (544 - 1) times in each one.
 ### SubT3:get the followings(&followers)
