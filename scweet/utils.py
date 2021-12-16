@@ -219,7 +219,7 @@ def get_last_date_from_csv(path):
     return datetime.datetime.strftime(max(pd.to_datetime(df["Timestamp"])), '%Y-%m-%dT%H:%M:%S.000Z')
 
 
-def log_in(driver, env, timeout=10):
+def log_in(driver, env, timeout=20):
     username = get_username(env) #const.USERNAME
     password = get_password(env) #const.PASSWORD
     nickname = get_nickname(env) #
@@ -235,12 +235,14 @@ def log_in(driver, env, timeout=10):
     sleep(1)
     username_el.send_keys(Keys.RETURN)
     sleep(1)
+    
     nickname_el = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, nickname_css)))
     sleep(1)
     nickname_el.send_keys(nickname)
     sleep(1)
     nickname_el.send_keys(Keys.RETURN)
     sleep(1)
+    
     password_el = WebDriverWait(driver, timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, password_css)))
     sleep(1)
     password_el.send_keys(password)
