@@ -145,8 +145,7 @@ def init_driver(headless=True, proxy=None, show_images=False, option=None):
     return driver
 
 
-def log_search_page(driver, since, until_local, lang, display_type, words, to_account, from_account, mention_account, hashtag, filter_replies, proximity,
-                    geocode, minreplies,minlikes,minretweets):
+def log_search_page(driver, since, until_local, lang, display_type, words, to_account, from_account, mention_account, hashtag, filter_replies, proximity):
     """ Search for this query between since and until_local"""
     # format the <from_account>, <to_account> and <hash_tags>
     from_account = "(from%3A" + from_account + ")%20" if from_account is not None else ""
@@ -183,6 +182,7 @@ def log_search_page(driver, since, until_local, lang, display_type, words, to_ac
     else :
         filter_replies = ""
      # geo
+    '''
     if geocode is not None:
         geocode = "%20geocode%3A"+geocode
     else:
@@ -202,14 +202,14 @@ def log_search_page(driver, since, until_local, lang, display_type, words, to_ac
         minretweets = "%20min_retweets%3A"+str(minretweets)
     else:
         minretweets = ""
-
+    '''
     # proximity
     if proximity == True:
         proximity = "&lf=on" # at the end
     else :
         proximity = ""
 
-    path = 'https://twitter.com/search?q='+words+from_account+to_account+mention_account+hash_tags+until_local+since+lang+filter_replies+geocode+minreplies+minlikes+minretweets+'&src=typed_query'+display_type+proximity
+    path = 'https://twitter.com/search?q='+words+from_account+to_account+mention_account+hash_tags+until_local+since+lang+filter_replies+'&src=typed_query'+display_type+proximity
     driver.get(path)
     return path
 
