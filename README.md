@@ -135,7 +135,7 @@ First, we have to make an assumption that: If senatorA follows senatorB, it mean
 
 (3)If the number of the result is smaller than the threshold(we can set ahead), then recycle the step(1) - step(2).
 
-Finally, we can get the reslut. What's more, here are an recommended model for step(1): get clusters based on calculating the similarity between any two elemnts, Reps & Sens in our project. This is a link of the paper supporting the model:https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6755451
+Finally, we can get the reslut. What's more, here are an recommended model for step(1): get clusters based on calculating the similarity between any two elemnts, Reps & Sens in our project. This is a link of the paper supporting the model:https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6755451) Honestly speaking, we don't have to ,and we can't construct a complex model as the one in that papaer, just because we don't have so many kinds of relationships between Reps. So the model will be easier.
 
 
 
