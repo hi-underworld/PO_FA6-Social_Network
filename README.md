@@ -123,7 +123,9 @@ Use the Selenium Framework to get the result.
 ### SubT4:construct the social network
 Here, we just output three 2-dimension matrixes(544 * 544) as the result of constructing the social network. If there is a kind of relationship between Rep_i & Rep_j, then matrix_i_j = 1, otherwise 0.
 
-There are still one intersting and useful task: #### detecting the 'Opinion Leader' （'Opinion Leader' means some people who get the most influential in a social community）. However, among all Reps&Sens, there must be some different clusters of senators supporting their own opinion leader(s), which means it's possble that the root opnion leader doesn't exit. As a result of this, here are the steps for this task:
+There are still one intersting and useful task: 
+#### detecting the 'Opinion Leader' 
+（'Opinion Leader' means some people who get the most influential in a social community）. However, among all Reps&Sens, there must be some different clusters of senators supporting their own opinion leader(s), which means it's possble that the root opnion leader doesn't exit. As a result of this, here are the steps for this task:
 
 First, we have to make an assumption that: If senatorA follows senatorB, it means senatorA support senatorB
 
