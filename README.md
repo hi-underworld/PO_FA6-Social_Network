@@ -127,7 +127,7 @@ There are still one intersting and useful task:
 #### detecting the 'Opinion Leader' 
 （'Opinion Leader' means some people who get the most influential in a social community）. However, among all Reps&Sens, there must be some different clusters of senators supporting their own opinion leader(s), which means it's possble that the root opnion leader doesn't exit. As a result of this, here are the steps for this task:
 
-First, we have to make an assumption that: If senatorA follows senatorB, it means senatorA support senatorB
+First, we have to make an assumption that: If senatorA follows senatorB, it means senatorA supports senatorB
 
 (1)Get all Reps&Sens into different clusters
 
