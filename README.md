@@ -118,3 +118,25 @@ Now, we discuss how to get the tweets where User1 and User2 appear together. May
 
 In our project, we get the list of Sens & Reps. Then traverse all Sens & Reps as User1 and User2 in above 3 conditions, recycling 544 * (544 - 1) times in each one.
 ### SubT3:get the followings(&followers)
+Use the Selenium Framework to get the result. 
+
+### SubT4:construct the social network
+Here, we just output three 2-dimension matrixes(544 * 544) as the result of constructing the social network. If there is a kind of relationship between Rep_i & Rep_j, then matrix_i_j = 1, otherwise 0.
+
+There are still one intersting and useful task: 
+#### detecting the 'Opinion Leader' 
+（'Opinion Leader' means some people who get the most influential in a social community）. However, among all Reps&Sens, there must be some different clusters of senators supporting their own opinion leader(s), which means it's possble that the root opnion leader doesn't exit. As a result of this, here are the steps for this task:
+
+First, we have to make an assumption that: If senatorA follows senatorB, it means senatorA supports senatorB
+
+(1)Get all Reps&Sens into different clusters
+
+(2)Extract the common Followings of all Reps&Sens in each cluster as the Opinion Leaders of each cluster.
+
+(3)If the number of the result is smaller than the threshold(we can set ahead), then recycle the step(1) - step(2).
+
+Finally, we can get the reslut. What's more, here are an recommended model for step(1): get clusters based on calculating the similarity between any two elemnts, Reps & Sens in our project. This is a link of the paper supporting the model:https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6755451) Honestly speaking, we don't have to ,and we can't construct a complex model as the one in that papaer, just because we don't have so many kinds of relationships between Reps. So the model will be easier.
+
+
+
+
